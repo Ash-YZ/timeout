@@ -12,6 +12,6 @@ Launches the test runner in the interactive watch mode.<br />
 
 ### `npm run start-server`
 
-Starts json-server on ports 4000 and 5000 to server the json data provided<br />
+Starts json-server on ports 4000 and 5000 to serve the json data provided<br />
 Users on [http://localhost:4000/data](http://localhost:4000/data)<br />
 Venues on [http://localhost:5000/data](http://localhost:5000/data)<br />
