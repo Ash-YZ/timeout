@@ -1,29 +1,42 @@
 import React, { useEffect, useState } from 'react'
-import { getUsers } from './services/Users'
+import { getPeople } from './services/People'
 import './styles.scss'
 
 
 function App() {
 
-  const [users, setUsers] = useState([])
+  const [people, setpeople] = useState([])
 
   useEffect(() => {
-    getUsers()
+    getPeople()
       .then(resp => resp.json())
-      .then(resp => setUsers(resp))
+      .then(resp => setpeople(resp))
   }, [])
+
+  const changeHandler = (e) => {
+    console.log('hello', e.target.value)
+  }
 
   return (
     <div className="app">
-      <header className="app-header">
+      <header className="appHeader">
+        <h1>Timeout lunch</h1>
       </header>
 
-      {!!users.length &&
-        <select>
-          {users.map(user =>
-            <option value={user.name}>{user.name}</option>
+      {!!people.length &&
+        <fieldset>
+          <legend>Who's going?</legend>
+          {people.map((person, idx) =>
+            <div key={idx}>
+              <input type='checkbox'
+                id={`person${idx}`}
+                name='peopleGoing'
+                value={person.name} />
+              <label htmlFor={`person${idx}`}>{person.name}</label>
+            </div>
           )}
-        </select>}
+        </fieldset>
+      }
     </div>
   )
 }
