@@ -1,6 +1,6 @@
 # Timeout Assignment
 
-## Please start json server before launchinf the app
+## NOTE: Please start json server before launching the app
 
 ## Relevant Scripts
 
