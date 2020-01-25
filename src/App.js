@@ -21,6 +21,7 @@ function App() {
     getPeople()
       .then(resp => resp.json())
       .then(resp => setPeople(resp))
+      .catch(() => alert('Have you started json-server? (npm run start-server)'))
   }, [])
 
   const togglePerson = (e) => {
@@ -42,6 +43,7 @@ function App() {
           dispatch({ type: 'SET_VENUE_DATA', venues })
           setVenueCache(venues)
         })
+        .catch(err => console.log(err))
   }
 
   return (
