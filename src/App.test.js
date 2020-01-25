@@ -2,8 +2,10 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import App from './App'
 
-// test('renders learn react link', () => {
-//   const { getByText } = render(<App />)
-//   const linkElement = getByText(/learn react/i)
-//   expect(linkElement).toBeInTheDocument()
-// })
+const rendered = render(<App />)
+
+test('renders title', () => {
+  const title = rendered.getByText(/Timeout lunch/i)
+  expect(title).toBeInTheDocument()
+})
+

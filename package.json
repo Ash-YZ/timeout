@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start-server": "concurrently --kill-others \"npx json-server -p 4000 src/data/users.json\" \"npx json-server -p 5000 src/data/users.json\""
+    "start-server": "concurrently --kill-others \"npx json-server -p 4000 src/data/people.json\" \"npx json-server -p 5000 src/data/venues.json\""
   },
   "eslintConfig": {
     "extends": "react-app"
