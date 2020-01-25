@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render correctly  1`] = `
+<div
+  className="app"
+>
+  <header>
+    <h1>
+      Timeout lunch
+    </h1>
+  </header>
+</div>
+`;

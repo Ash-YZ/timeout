@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import CheckBoxList from './components/CheckboxList'
 import { getPeople } from './services/People'
 import { getVenues } from './services/Venues'
 import { dataReducer } from './reducers/DataReducer'
@@ -15,6 +16,7 @@ function App() {
   const [venueCache, setVenueCache] = useState(null)
   const [state, dispatch] = React.useReducer(dataReducer, initialState)
 
+  // Load people on first render
   useEffect(() => {
     getPeople()
       .then(resp => resp.json())
@@ -23,7 +25,6 @@ function App() {
 
   const togglePerson = (e) => {
     dispatch({ type: 'CLEAR_VENUES_DATA' })
-
     if (e.target.checked) {
       dispatch({ type: 'ADD_PERSON', person: people.find(p => p.name === e.target.value) })
     } else {
@@ -49,25 +50,14 @@ function App() {
         <h1>Timeout lunch</h1>
       </header>
       {!!people.length &&
-        <>
-          <fieldset>
-            <legend>Who's going?</legend>
-            {people.map((person, idx) =>
-              <div key={idx}>
-                <input type='checkbox'
-                  className='person-checkbox'
-                  id={`person${idx}`}
-                  name='peopleGoing'
-                  value={person.name}
-                  onChange={togglePerson} />
-                <label htmlFor={`person${idx}`}>{person.name}</label>
-              </div>
-            )}
-          </fieldset>
-          <button type='button' onClick={findRestaurants}>Find restaurants</button>
-        </>
+        <CheckBoxList
+          title='Who&apos;s going?'
+          list={people}
+          groupName='peopleGoing'
+          handleChange={togglePerson}
+          handleSubmit={findRestaurants}
+          sumbitLabel='Find restaurants' />
       }
-
       {!!state.venuesData.safe &&
         <>
           <h2>Places to go:</h2>

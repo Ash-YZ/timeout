@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckBoxList should render correctly  1`] = `
+<Fragment>
+  <fieldset>
+    <legend>
+      Test Title
+    </legend>
+    <div
+      key="0"
+    >
+      <input
+        className="cbl-checkbox"
+        id="cbl-0"
+        name="testGroup"
+        onChange={[MockFunction]}
+        type="checkbox"
+        value="Person 1"
+      />
+      <label
+        className="cbl-label"
+        htmlFor="cbl-0"
+      >
+        Person 1
+      </label>
+    </div>
+  </fieldset>
+  <button
+    className="cbl-submit"
+    onClick={[MockFunction]}
+    type="button"
+  >
+    Submit
+  </button>
+</Fragment>
+`;

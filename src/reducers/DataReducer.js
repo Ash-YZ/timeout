@@ -8,7 +8,7 @@ export const dataReducer = (state, action) => {
     return { ...state, peopleGoing }
   }
   if (action.type === 'SET_VENUE_DATA') {
-    let venuesData = getVenueData(state.peopleGoing, action.venues)
+    let venuesData = getVenuesData(state.peopleGoing, action.venues)
 
     return { ...state, venuesData }
   }
@@ -28,7 +28,7 @@ export const dataReducer = (state, action) => {
  *                                  who can't eat/drink there
  * 
  **/
-function getVenueData(peopleGoing, venues) {
+function getVenuesData(peopleGoing, venues) {
   let venuesData = { safe: [], unsafe: [] }
 
   // Loop venues to decide if each person can eat or drink there
