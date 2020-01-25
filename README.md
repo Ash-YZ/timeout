@@ -1,5 +1,7 @@
 # Timeout Assignment
 
+## Please start json server before launchinf the app
+
 ## Relevant Scripts
 
 In the project directory, you can run:
