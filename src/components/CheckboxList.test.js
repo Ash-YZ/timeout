@@ -2,8 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import CheckBoxList from './CheckboxList'
 
-const changeFn = jest.fn();
-const submitFn = jest.fn();
+const changeFn = jest.fn()
+const submitFn = jest.fn()
 
 const testProps = {
   title: 'Test Title',
@@ -14,7 +14,7 @@ const testProps = {
   sumbitLabel: 'Submit'
 
 }
-const component = shallow(<CheckBoxList {...testProps} />);
+const component = shallow(<CheckBoxList {...testProps} />)
 
 describe('CheckBoxList', () => {
   it('should render correctly ', () => {
