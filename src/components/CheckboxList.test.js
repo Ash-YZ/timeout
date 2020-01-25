@@ -1,5 +1,5 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+import React from 'react'
+import { shallow } from 'enzyme'
 import CheckBoxList from './CheckboxList'
 
 const changeFn = jest.fn()
@@ -35,4 +35,4 @@ describe('CheckBoxList', () => {
     component.find('.cbl-submit').first().simulate('click')
     expect(submitFn).toHaveBeenCalled()
   })
-});
+})
